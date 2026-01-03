@@ -1,0 +1,199 @@
+/* 1. RESET & SETUP */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #222;
+    display: flex; /* This creates the Sidebar + Content layout */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* 2. SIDEBAR STYLING */
+.sidebar {
+    width: 280px; /* Slightly wider for the big name */
+    height: 100vh;
+    padding: 50px 40px;
+    position: fixed; /* Freezes sidebar in place */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    z-index: 100;
+}
+
+/* BIG BOLD NAME */
+.logo h1 {
+    font-size: 3.5rem; /* VERY BIG */
+    font-weight: 900; /* EXTRA BOLD */
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.logo p {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 500;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* NAVIGATION TABS */
+nav ul {
+    list-style: none;
+    margin-top: -60px; /* Pulls nav up a bit */
+}
+
+nav li {
+    margin-bottom: 12px;
+}
+
+.nav-tab {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #aaa; /* Grey by default */
+    display: inline-block;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Hover and Active State */
+.nav-tab:hover, .nav-tab.active {
+    color: #000; /* Black when hovered */
+    transform: translateX(5px); /* Subtle slide to the right */
+}
+
+/* Optional: Underline effect on hover */
+.nav-tab::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s;
+}
+.nav-tab:hover::after {
+    width: 100%;
+}
+
+.footer-info {
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+/* 3. MAIN CONTENT (RIGHT SIDE) */
+.main-content {
+    margin-left: 280px; /* Must match sidebar width */
+    width: calc(100% - 280px);
+    padding: 50px;
+    min-height: 100vh;
+}
+
+/* IMAGES */
+.gallery-container {
+    /* MASONRY LAYOUT: Columns adjust automatically */
+    column-count: 2; 
+    column-gap: 40px;
+    margin-bottom: 100px;
+}
+
+.artwork-item {
+    margin-bottom: 40px;
+    break-inside: avoid; /* Keeps images whole */
+}
+
+.artwork-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.caption {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 500;
+}
+
+/* TEXT SECTIONS */
+.text-section {
+    max-width: 600px;
+    margin-bottom: 80px;
+    padding-top: 20px;
+}
+
+.text-section h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+.text-section p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #444;
+}
+
+.text-section a {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* 4. MOBILE LAYOUT */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    .logo h1 {
+        font-size: 2.5rem; /* Smaller on phone */
+    }
+
+    nav ul {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .nav-tab:hover {
+        transform: none; /* No slide on mobile */
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .gallery-container {
+        column-count: 1; /* 1 Column on phone */
+    }
+}

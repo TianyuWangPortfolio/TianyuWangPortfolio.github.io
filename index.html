@@ -3,43 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name — Art Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Tianyu Wang — 3D Portfolio</title>
+    <!-- THIS LINE CONNECTS THE DESIGN. ENSURE FILENAME MATCHES! -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>Tianyu Wang</h1>
-    <nav>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+    <!-- SIDEBAR (Fixed on the left) -->
+    <header class="sidebar">
+        <div class="logo">
+            <h1>TIANYU<br>WANG</h1>
+            <p>3D Animation & Modeling</p>
+        </div>
 
-<main>
-    <section id="gallery" class="grid-gallery">
-        <figure><img src="images/art1.jpg" alt="Artwork 1"></figure>
-        <figure><img src="images/art2.jpg" alt="Artwork 2"></figure>
-        <figure><img src="images/art3.jpg" alt="Artwork 3"></figure>
-        <figure><img src="images/art4.jpg" alt="Artwork 4"></figure>
-    </section>
+        <nav>
+            <ul>
+                <!-- "class='active'" makes the first tab look selected -->
+                <li><a href="#gallery" class="nav-tab active">Gallery</a></li>
+                <li><a href="#about" class="nav-tab">About</a></li>
+                <li><a href="#contact" class="nav-tab">Contact</a></li>
+            </ul>
+        </nav>
 
-    <section id="about">
-        <h2>About</h2>
-        <p>Short bio about you and your art.</p>
-    </section>
+        <div class="footer-info">
+            <p>&copy; 2026 Tianyu Wang</p>
+        </div>
+    </header>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: yourname@example.com</p>
-    </section>
-</main>
+    <!-- MAIN CONTENT (Scrolls on the right) -->
+    <main class="main-content">
+        
+        <!-- GALLERY GRID -->
+        <div id="gallery" class="gallery-container">
+            
+            <div class="artwork-item">
+                <img src="images/art1.JPG" alt="Dining Room Scene">
+                <div class="caption">Dining Hall - Texture Study</div>
+            </div>
 
-<footer>
-    <p>&copy; 2026 Your Name</p>
-</footer>
+            <div class="artwork-item">
+                <img src="images/art2.jpg" alt="Cityscape">
+                <div class="caption">Steampunk City - Environmental Modeling</div>
+            </div>
+
+            <div class="artwork-item">
+                <img src="images/art3.JPG" alt="Architecture Detail">
+                <div class="caption">Architectural Detail</div>
+            </div>
+
+            <div class="artwork-item">
+                <img src="images/art4.JPG" alt="Atmospheric Scene">
+                <div class="caption">Lighting & Atmosphere</div>
+            </div>
+
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="text-section">
+            <h2>About</h2>
+            <p>Tianyu Wang is a 3D animation major specializing in 3D modeling. With a strong interest in form, structure, and detail, they focus on creating high-quality digital assets while continuously refining both technical and artistic skills.</p>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="text-section">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:eliauk.04@gmail.com">eliauk.04@gmail.com</a></p>
+        </section>
+
+    </main>
 
 </body>
 </html>
-
